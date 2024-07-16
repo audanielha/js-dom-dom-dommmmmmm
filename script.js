@@ -43,7 +43,19 @@ document.addEventListener("DOMContentLoaded",function(){
         });
 
         //e.current item , get id number 
+        square.addEventListener("dblclick", (e)=>{
 
+            if(e.currentTarget.id % 2 && e.currentTarget.nextSibling && e.currentTarget.nextSibling.classList.contains('black-square')){
+                e.currentTarget.nextSibling.remove();
+            }
+            else if(e.currentTarget.id % 3 && e.currentTarget.previousSibling && e.currentTarget.previousSibling.classList.contains('black-square')){
+                e.currentTarget.previousSibling.remove();
+            }
+            else{
+                alert('There is no square!')
+            }
+
+        });
     });
 
 
